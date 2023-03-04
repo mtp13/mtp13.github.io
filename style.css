@@ -4,21 +4,20 @@ body {
   font-family: 'Noto Sans', sans-serif;
 }
 
-h1 {
-  font-size: xx-large;
-}
-
-h2 {
-  font-size: x-large;
-}
-
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: 'Ubuntu', sans-serif;
 }
 
 a {
   color: red;
   text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 header,
@@ -37,12 +36,13 @@ footer .container {
 header {
   background: white;
   overflow: auto;
-  color: red;
 }
 
 header .left {
   float: left;
   width: 570px;
+  color: #AD3F3D;
+  font-style: italic;
   /* border: 1px solid black; */
 }
 
@@ -68,12 +68,30 @@ main .right {
   width: 285px;
 }
 
-footer .left {
+footer .contact {
   float: left;
   width: 570px;
+  overflow: auto;
 }
 
-footer .right {
+footer .contact :nth-child(2) {
+  color: #AD3F3D;
+  font-style: italic;
+}
+
+footer .sitemap {
   float: right;
   width: 285px;
+}
+
+li {
+  list-style-type: none;
+}
+
+footer .sitemap .left {
+  float: left;
+}
+
+footer .sitemap .right {
+  float: right;
 }
