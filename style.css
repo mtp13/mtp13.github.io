@@ -1,5 +1,14 @@
 body {
   background: #f9e933;
+  font-size: 100%;
+}
+
+h1 {
+  font-size: xx-large;
+}
+
+h2 {
+  font-size: x-large;
 }
 
 header, main, footer {
@@ -13,8 +22,43 @@ header .container, main .container, footer .container {
 
 header {
   background: white;
+  overflow: auto;
+}
+
+header .left {
+  float: left;
+  width: 570px;
+  /* border: 1px solid black; */
+}
+
+header .right {
+  float: right;
+  width: 285px;
 }
 
 main {
   background: white;
+  overflow: auto;
+}
+
+main .left {
+  float: left;
+  width: 570px;
+  /* border: 1px solid black; */
+
+}
+
+main .right {
+  float: right;
+  width: 285px;
+}
+
+footer .left {
+  float: left;
+  width: 570px;
+}
+
+footer .right {
+  float: right;
+  width: 285px;
 }
