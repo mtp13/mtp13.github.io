@@ -1,16 +1,15 @@
 body {
-  background: lightcyan;
-  width: 800px;
-  margin: auto;
+  background: #f9e933;
 }
 
-h1 {
-  color: maroon;
-  text-align: center;
+header {
+  background: white;
 }
 
-p {
-  color: gray;
-  border: 1px solid gray;
-  padding: 10px;
+main {
+  background: white;
+}
+
+header, main, footer {
+  min-width: 855px;
 }
