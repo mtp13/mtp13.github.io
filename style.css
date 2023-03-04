@@ -1,6 +1,7 @@
 body {
   background: #f9e933;
   font-size: 100%;
+  font-family: 'Noto Sans', sans-serif;
 }
 
 h1 {
@@ -11,11 +12,24 @@ h2 {
   font-size: x-large;
 }
 
-header, main, footer {
+h1, h2, h3, h4 {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+a {
+  color: red;
+  text-decoration: none;
+}
+
+header,
+main,
+footer {
   min-width: 855px;
 }
 
-header .container, main .container, footer .container {
+header .container,
+main .container,
+footer .container {
   max-width: 855px;
   margin: auto;
 }
@@ -23,6 +37,7 @@ header .container, main .container, footer .container {
 header {
   background: white;
   overflow: auto;
+  color: red;
 }
 
 header .left {
