@@ -1,0 +1,9 @@
+body {
+  font-family: 'Noto Sans', sans-serif;
+  max-width: 400px;
+
+  border: 1px solid black;
+  margin: auto;
+  text-align: center;
+  color:blue;
+}
