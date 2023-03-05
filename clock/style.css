@@ -1,11 +1,8 @@
 body {
-  max-width: 400px;
-  margin: auto;
   text-align: center;
   background-color: black;
   color: white;
   font-family: 'Righteous', cursive;
   font-size: 3.0em;
-  /* border: solid 1px white; */
   padding: 70px;
 }
