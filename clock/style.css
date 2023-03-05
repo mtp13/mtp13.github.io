@@ -1,12 +1,11 @@
 body {
   max-width: 400px;
-  border: 1px solid black;
   margin: auto;
   text-align: center;
-  color:black;
-}
-
-#time {
-  font-family: 'Noto Sans', sans-serif;
-  color:blue;
+  background-color: black;
+  color: white;
+  font-family: 'Righteous', cursive;
+  font-size: 3.0em;
+  /* border: solid 1px white; */
+  padding: 70px;
 }
