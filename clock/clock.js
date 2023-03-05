@@ -1,3 +1,6 @@
+function zeroPad(numberStr) {
+  return numberStr.padStart(2, "0");
+}
 
 function updateClock() {
   const date = new Date();
@@ -15,8 +18,8 @@ function updateClock() {
     hour = (hour <= 12) ? hour : (hour -= 12);
   }
 
-  minutes = (minutes >= 10) ? minutes : `0${minutes}`;
-  seconds = (seconds >= 10) ? seconds : `0${seconds}`;
+  minutes = zeroPad(minutes.toString());
+  seconds = zeroPad(seconds.toString());
 
   let time = `${hour}:${minutes}:${seconds} ${timeOfDay}`;
   document.getElementById("time").innerHTML = time;
