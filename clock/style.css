@@ -2,7 +2,7 @@ body {
   text-align: center;
   background-color: black;
   color: white;
-  font-family: 'VT323', monospace;
+  font-family: monospace;
   font-size: 500%;
-  padding: 70px;
+  padding: 50px;
 }

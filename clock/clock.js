@@ -21,8 +21,8 @@ function updateClock() {
   minutes = zeroPad(minutes.toString());
   seconds = zeroPad(seconds.toString());
 
-  let time = `${hour}:${minutes}:${seconds} ${timeOfDay}`;
-  document.getElementById("time").innerHTML = time;
+  let clock = `${hour}:${minutes}:${seconds} ${timeOfDay}`;
+  document.getElementById("clock").innerHTML = clock;
 }
 
 setInterval('updateClock()', 500)
