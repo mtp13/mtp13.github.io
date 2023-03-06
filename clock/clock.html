@@ -11,7 +11,16 @@
 </head>
 
 <body onload="updateClock()">
-  <p id="clock"> HH:MM:SS AM </p>
+  <div class="clock">
+    <p id="clock"> HH:MM:SS AM </p>
+  </div>
+  <div class="timeSelector">
+    <fieldset>
+      <legend>Select the time format:</legend>
+      <input type="radio" name="timeFormat" id="12Hour" value="12Hour" checked>12 Hour
+      <input type="radio" name="timeFormat" id="military" value="military">Military
+    </fieldset>
+  </div>
 </body>
 
 </html>

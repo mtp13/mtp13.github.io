@@ -3,19 +3,23 @@ function zeroPad(numberStr) {
 }
 
 function updateClock() {
-  const date = new Date();
-  // const date = new Date("1995-12-17T23:24:00");
+  const TWELVE = "12Hour";
+  let timeOfDay ="";
+  const date = new Date();   // const date = new Date("1995-12-17T23:24:00");
   let [hour, minutes, seconds] = [
     date.getHours(),
     date.getMinutes(),
     date.getSeconds(),
   ];
-
-  let timeOfDay = (hour < 12) ? "AM" : "PM";
-  if (hour === 0) {
-    hour = 12;
-  } else {
-    hour = (hour <= 12) ? hour : (hour -= 12);
+  
+  const timeFormat = document.querySelector('input[name="timeFormat"]:checked').value;
+  if (timeFormat === TWELVE) {
+    timeOfDay = (hour < 12) ? "AM" : "PM";
+    if (hour === 0) {
+      hour = 12;
+    } else {
+      hour = (hour <= 12) ? hour : (hour -= 12);
+    }
   }
 
   minutes = zeroPad(minutes.toString());

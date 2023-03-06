@@ -1,8 +1,19 @@
 body {
-  text-align: center;
   background-color: black;
   color: white;
+}
+
+.clock {
+  color: red;
+  text-align: center;
   font-family: monospace;
-  font-size: 500%;
-  padding: 50px;
+  font-size: xxx-large;
+  /* padding: 50px; */
+}
+
+fieldset {
+  text-align: center;
+  font-size: medium;
+  max-width: 250px;
+  margin: auto;
 }
