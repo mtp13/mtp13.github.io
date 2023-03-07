@@ -1,13 +1,9 @@
 function updateClock() {
   const date = new Date();
   const militaryTime = document.getElementById("military");
-  let clock;
+  const options = (militaryTime.checked) ? { hour12: false } : { hour12: true };
 
-  if (militaryTime.checked) {
-    clock = date.toTimeString().replace(/ GMT.*/, "");
-  } else {
-    clock = date.toLocaleTimeString();
-  }
+  const clock = date.toLocaleTimeString("en-us", options);
   document.getElementById("clock").innerHTML = clock;
 
   const showDate = document.getElementById("showDate");
