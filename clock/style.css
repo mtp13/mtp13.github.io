@@ -16,8 +16,8 @@ body {
 }
 
 .displayOptions {
-  text-align: center;
-  font-size: 3vw;
-  max-width: 50vw;
+  text-align: left;
+  font-size: 2vw;
+  max-width: 18vw;
   margin: auto;
 }
