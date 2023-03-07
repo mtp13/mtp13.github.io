@@ -8,7 +8,7 @@ function updateClock() {
 
   const showDate = document.getElementById("showDate");
   if (showDate.checked) {
-    document.getElementById("date").innerHTML = date.toDateString();
+    document.getElementById("date").innerHTML = date.toLocaleDateString("en-us", { dateStyle: "full" });
   } else {
     document.getElementById("date").innerHTML = "";
   }
