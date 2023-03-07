@@ -15,9 +15,9 @@ body {
   font-size: 10vw;
 }
 
-.timeFormat {
-  text-align: center;
+.displayOptions {
+  text-align: left;
   font-size: 2vw;
-  max-width: 30vw;
+  max-width: 18vw;
   margin: auto;
 }
