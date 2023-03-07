@@ -1,16 +1,17 @@
 function updateClock() {
   const date = new Date();
-  const militaryTime = document.getElementById("military");
-  const options = (militaryTime.checked) ? { hour12: false } : { hour12: true };
+  const militaryTimeChecked = document.getElementById("military").checked;
+  const timeOption = militaryTimeChecked ? { hour12: false } : { hour12: true };
+  const dateOption = { dateStyle: "full" };
 
-  const clock = date.toLocaleTimeString("en-us", options);
+  const clock = date.toLocaleTimeString("en-us", timeOption);
   document.getElementById("clock").innerHTML = clock;
 
-  const showDate = document.getElementById("showDate");
-  if (showDate.checked) {
-    document.getElementById("date").innerHTML = date.toLocaleDateString("en-us", { dateStyle: "full" });
-  } else {
-    document.getElementById("date").innerHTML = "";
+  const showDateChecked = document.getElementById("showDate").checked;
+  const dateElement = document.getElementById("date");
+  dateElement.innerHTML = "";
+  if (showDateChecked) {
+    dateElement.innerHTML = date.toLocaleDateString("en-us", dateOption);
   }
 }
 
