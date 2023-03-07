@@ -27,6 +27,14 @@ function updateClock() {
 
   let clock = `${hour}:${minutes}:${seconds} ${timeOfDay}`;
   document.getElementById("clock").innerHTML = clock;
+
+  const showDate = document.querySelector('input[name="showDate"]:checked');
+  if (showDate) {
+    document.getElementById("date").innerHTML = date.toDateString();
+  } else {
+    document.getElementById("date").innerHTML = " ";
+  }
+
 }
 
 setInterval('updateClock()', 500)

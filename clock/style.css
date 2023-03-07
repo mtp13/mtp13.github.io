@@ -3,6 +3,11 @@ body {
   color: white;
 }
 
+.date {
+  text-align: center;
+  font-size: 6vw;
+}
+
 .clock {
   color: red;
   text-align: center;
@@ -12,7 +17,7 @@ body {
 
 .timeFormat {
   text-align: center;
-  font-size: 3vw;
-  max-width: 50vw;
+  font-size: 2vw;
+  max-width: 30vw;
   margin: auto;
 }

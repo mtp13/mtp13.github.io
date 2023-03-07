@@ -11,14 +11,18 @@
 </head>
 
 <body onload="updateClock()">
+  <div class="date">
+    <p id="date"></p>
+  </div>
   <div class="clock">
     <p id="clock"> HH:MM:SS AM </p>
   </div>
   <div class="timeFormat">
     <fieldset>
-      <legend>Select the time format:</legend>
+      <legend>Display options:</legend>
       <input type="radio" name="timeFormat" id="12Hour" value="12Hour" checked>12 Hour
-      <input type="radio" name="timeFormat" id="military" value="military">Military
+      <input type="radio" name="timeFormat" id="military" value="military">Military<br>
+      <input type="checkbox" name="showDate" id="showDate">Show Date?
     </fieldset>
   </div>
 </body>
