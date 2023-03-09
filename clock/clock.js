@@ -1,6 +1,8 @@
 function updateClock() {
   const date = new Date();
-  const timeOption = $("#military").prop("checked") ? { hour12: false } : { hour12: true };
+  const timeOption = $("#military").prop("checked")
+    ? { hour12: false }
+    : { hour12: true };
   const dateOption = { dateStyle: "full" };
 
   $("#clock").text(date.toLocaleTimeString("en-us", timeOption));
@@ -11,4 +13,4 @@ function updateClock() {
   }
 }
 
-setInterval('updateClock()', 500)
+setInterval("updateClock()", 500);

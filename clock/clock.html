@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="clock.js"></script>
+    <title>Digital Clock</title>
+  </head>
 
-<head>
-  <link rel="stylesheet" href="style.css" type="text/css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-  <script src="clock.js"></script>
-  <title>Digital Clock</title>
-</head>
-
-<body onload="updateClock()">
-  <div class="date">
-    <p id="date"></p>
-  </div>
-  <div class="clock">
-    <p id="clock"> HH:MM:SS AM </p>
-  </div>
-  <div class="displayOptions">
-    <fieldset>
-      <legend> Display Options: </legend>
-      <input type="checkbox" name="military" id="military"> Military Time <br>
-      <input type="checkbox" name="showDate" id="showDate"> Date
-    </fieldset>
-  </div>
-</body>
-
+  <body onload="updateClock()">
+    <div class="date">
+      <p id="date"></p>
+    </div>
+    <div class="clock">
+      <p id="clock">HH:MM:SS AM</p>
+    </div>
+    <div class="displayOptions">
+      <fieldset>
+        <legend>Display Options:</legend>
+        <input type="checkbox" name="military" id="military" /> Military Time
+        <br />
+        <input type="checkbox" name="showDate" id="showDate" /> Date
+      </fieldset>
+    </div>
+  </body>
 </html>
