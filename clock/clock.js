@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 function updateClock() {
   const date = new Date();
   const timeOption = $("#military").prop("checked")
