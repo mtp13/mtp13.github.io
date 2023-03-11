@@ -8,9 +8,9 @@ function updateClock() {
   $("#clock").text(date.toLocaleTimeString("en-us", timeOption));
   $("#date").text(date.toLocaleDateString("en-us", dateOption));
   if ($("#showDate").prop("checked")) {
-    $("#date").css("opacity", "1");
+    $("#date").css("visibility", "visible");
   } else {
-    $("#date").css("opacity", "0");
+    $("#date").css("visibility", "hidden");
   }
 }
 
