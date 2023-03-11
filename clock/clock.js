@@ -5,12 +5,12 @@ function updateClock() {
     ? { hour12: false }
     : { hour12: true };
   const dateOption = { dateStyle: "full" };
-
   $("#clock").text(date.toLocaleTimeString("en-us", timeOption));
-
-  $("#date").hide();
+  $("#date").text(date.toLocaleDateString("en-us", dateOption));
   if ($("#showDate").prop("checked")) {
-    $("#date").show().text(date.toLocaleDateString("en-us", dateOption));
+    $("#date").css("opacity", "1");
+  } else {
+    $("#date").css("opacity", "0");
   }
 }
 

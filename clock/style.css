@@ -3,21 +3,22 @@ body {
   color: white;
 }
 
-.date {
+#date {
+  margin: 10px;
   text-align: center;
-  font-size: 6vw;
+  font-size: 24px;
 }
-
-.clock {
+#clock {
+  margin: 10px;
   color: red;
-  text-align: center;
+  text-align: center;  
   font-family: monospace;
-  font-size: 10vw;
+  font-size: 48px;
 }
 
 .displayOptions {
-  text-align: left;
-  font-size: 2vw;
-  max-width: 18vw;
   margin: auto;
+  max-width: 150px;
+  text-align: left;
+  font-size: 12px;
 }
