@@ -3,6 +3,14 @@ body {
   color: white;
 }
 
+.wrapper {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 960px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
 #date {
   margin: 10px;
   text-align: center;
@@ -11,7 +19,7 @@ body {
 #clock {
   margin: 10px;
   color: red;
-  text-align: center;  
+  text-align: center;
   font-family: monospace;
   font-size: 48px;
 }
