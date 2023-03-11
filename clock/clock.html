@@ -14,21 +14,10 @@
       <div class="displayOptions">
         <fieldset>
           <legend>Display Options:</legend>
-          <input
-            type="checkbox"
-            name="military"
-            id="military"
-            onclick="updateClock()"
-          />
-          Military Time
-          <br />
-          <input
-            type="checkbox"
-            name="showDate"
-            id="showDate"
-            onclick="updateClock()"
-          />
-          Date
+          <input type="checkbox" id="military" onclick="updateClock()" />
+          <label for="military">Military Time</label><br />
+          <input type="checkbox" id="showDate" onclick="updateClock()" />
+          <label for="showDate">Date</label>
         </fieldset>
       </div>
     </div>
