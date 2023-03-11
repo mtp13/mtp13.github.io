@@ -9,17 +9,15 @@
 
   <body onload="updateClock()">
     <div class="wrapper">
-      <p id="date"></p>
+      <p id="date">MM/DD/YYYY</p>
       <p id="clock">HH:MM:SS AM</p>
-      <div class="displayOptions">
-        <fieldset>
-          <legend>Display Options:</legend>
-          <input type="checkbox" id="military" onclick="updateClock()" />
-          <label for="military">Military Time</label><br />
-          <input type="checkbox" id="showDate" onclick="updateClock()" />
-          <label for="showDate">Date</label>
-        </fieldset>
-      </div>
+      <fieldset id="displayOptions">
+        <legend>Display Options:</legend>
+        <input type="checkbox" id="military" onclick="updateClock()" />
+        <label for="military">Military Time</label><br />
+        <input type="checkbox" id="showDate" onclick="updateClock()" />
+        <label for="showDate">Date</label>
+      </fieldset>
     </div>
   </body>
 </html>
