@@ -30,14 +30,14 @@ function setupGame() {
     }
 }
 
-function resetCards() {
+function setupForNextTry() {
     numberOfTries += 1;
     if (document.querySelectorAll("[data-matched='false']").length > 0) {
-        document.getElementById("status").innerHTML =
-            "Click two cards to play. Tries: " + numberOfTries;
         firstCard = null;
         secondCard = null;
         preventClick = null;
+        document.getElementById("status").innerHTML =
+            "Click two cards to play. Tries: " + numberOfTries;
     } else {
         document.getElementById("status").innerHTML =
             "Good game! Tries: " + numberOfTries;
@@ -56,16 +56,16 @@ function onCardClicked() {
     } else {
         secondCard = this;
         secondCard.style.backgroundColor = secondCard.dataset.color;
-        if (firstCard.dataset.color === secondCard.dataset.color) {
-            document.getElementById("status").innerHTML = "Match Found";
-            setTimeout(resetCards, 750);
+        if (secondCard.dataset.color === firstCard.dataset.color) {
             firstCard.dataset.matched = secondCard.dataset.matched = "true";
+            document.getElementById("status").innerHTML = "Match Found";
+            setTimeout(setupForNextTry, 750);
         } else {
             document.getElementById("status").innerHTML = "Match Not Found";
             setTimeout(function () {
                 firstCard.style.backgroundColor = "white";
                 secondCard.style.backgroundColor = "white";
-                resetCards();
+                setupForNextTry();
             }, 750);
         }
     }
