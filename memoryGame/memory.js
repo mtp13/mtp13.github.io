@@ -15,7 +15,7 @@ function setupGame() {
         "yellow",
         "orange",
         "purple",
-        "brown",
+        "saddlebrown",
         "black",
     ];
 
