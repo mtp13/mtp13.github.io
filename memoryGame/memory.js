@@ -13,7 +13,7 @@ function setupGame() {
         "blue",
         "green",
         "yellow",
-        "orange",
+        "darkorange",
         "purple",
         "saddlebrown",
         "black",
@@ -59,14 +59,14 @@ function onCardClicked() {
         if (secondCard.dataset.color === firstCard.dataset.color) {
             firstCard.dataset.matched = secondCard.dataset.matched = "true";
             document.getElementById("status").innerHTML = "Match Found";
-            setTimeout(setupForNextTry, 750);
+            setTimeout(setupForNextTry, 500);
         } else {
             document.getElementById("status").innerHTML = "Match Not Found";
             setTimeout(function () {
                 firstCard.style.backgroundColor = "white";
                 secondCard.style.backgroundColor = "white";
                 setupForNextTry();
-            }, 750);
+            }, 500);
         }
     }
 }
