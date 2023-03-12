@@ -1,0 +1,35 @@
+.wrapper {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 960px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+body {
+  background-color: black;
+  text-align: center;
+  color: white;
+  padding: 50px;
+}
+
+#status {
+  color: red;
+}
+
+.row {
+  text-align: center;
+}
+
+.card {
+  display: inline-block;
+  background-color: white;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}
+
+.card:hover {
+  box-shadow: inset 0px 0px 0px 1px red;
+  box-sizing: border-box;
+}
