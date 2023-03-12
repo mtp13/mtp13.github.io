@@ -7,14 +7,14 @@
 }
 
 body {
-    background-color: black;
+    background-color: lightblue;
     text-align: center;
     color: white;
     padding: 50px;
 }
 
 #status {
-    color: red;
+    color: blue;
 }
 
 .row {
@@ -27,9 +27,11 @@ body {
     width: 100px;
     height: 100px;
     cursor: pointer;
+    border: 1px solid blue;
 }
 
 .card:hover {
-    box-shadow: inset 0px 0px 0px 1px red;
-    box-sizing: border-box;
+    border: 2px solid red;
+    height: 98px;
+    width: 98px;
 }

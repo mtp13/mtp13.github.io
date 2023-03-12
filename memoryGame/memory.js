@@ -1,6 +1,7 @@
 let firstCard = null;
 let secondCard = null;
-numberOfTries = 0;
+let preventClick = null;
+let numberOfTries = 0;
 
 function getRandomNumber(max) {
     return Math.floor(Math.random() * max);
@@ -9,13 +10,13 @@ function getRandomNumber(max) {
 function setupGame() {
     const uniqueColors = [
         "red",
-        "orange",
-        "yellow",
-        "green",
         "blue",
-        "indigo",
-        "violet",
-        "pink",
+        "green",
+        "yellow",
+        "orange",
+        "purple",
+        "brown",
+        "black",
     ];
 
     let color = "";
@@ -24,7 +25,7 @@ function setupGame() {
     for (let i = 0; i < cards.length; i++) {
         color = cardColors.splice(getRandomNumber(cardColors.length), 1);
         cards[i].dataset.color = color;
-        cards[i].dataset.matched = false;
+        cards[i].dataset.matched = "false";
         cards[i].addEventListener("click", onCardClicked);
     }
 }
@@ -36,6 +37,7 @@ function resetCards() {
             "Click two cards to play. Tries: " + numberOfTries;
         firstCard = null;
         secondCard = null;
+        preventClick = null;
     } else {
         document.getElementById("status").innerHTML =
             "Good game! Tries: " + numberOfTries;
@@ -43,19 +45,20 @@ function resetCards() {
 }
 
 function onCardClicked() {
-    if (this.dataset.matched === "true") {
-        console.log("already matched");
+    if (this === firstCard || preventClick || this.dataset.matched === "true") {
         return;
     }
+    preventClick = true;
     if (!firstCard) {
         firstCard = this;
         firstCard.style.backgroundColor = firstCard.dataset.color;
+        preventClick = null;
     } else {
         secondCard = this;
         secondCard.style.backgroundColor = secondCard.dataset.color;
         if (firstCard.dataset.color === secondCard.dataset.color) {
             document.getElementById("status").innerHTML = "Match Found";
-            setTimeout(resetCards, 1000);
+            setTimeout(resetCards, 750);
             firstCard.dataset.matched = secondCard.dataset.matched = "true";
         } else {
             document.getElementById("status").innerHTML = "Match Not Found";
@@ -63,7 +66,7 @@ function onCardClicked() {
                 firstCard.style.backgroundColor = "white";
                 secondCard.style.backgroundColor = "white";
                 resetCards();
-            }, 1000);
+            }, 750);
         }
     }
 }
