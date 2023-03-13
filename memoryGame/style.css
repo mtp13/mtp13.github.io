@@ -12,7 +12,13 @@ body {
     color: black;
     padding: 50px;
 }
-
+#new-game {
+    font-size: large;
+    border: 2px solid blue;
+    border-radius: 5px;
+    color: blue;
+    background-color: white;
+}
 #status {
     color: blue;
 }
@@ -28,6 +34,9 @@ body {
     height: 100px;
     cursor: pointer;
     border: 1px solid blue;
+    border-radius: 5px;
+    box-shadow: 3px 3px;
+    margin: 5px;
 }
 
 .card:hover {
