@@ -8,6 +8,7 @@ function getRandomNumber(max) {
 }
 
 function setupGame() {
+    console.log("Cole is at Gigi's house right now.");
     const uniqueColors = [
         "red",
         "blue",
@@ -27,6 +28,13 @@ function setupGame() {
         cards[i].dataset.color = color;
         cards[i].dataset.matched = "false";
         cards[i].addEventListener("click", onCardClicked);
+        cards[i].style.backgroundColor = "white";
+        numberOfTries = 0;
+        document.getElementById("status").innerHTML =
+            "Click two cards to play. Tries: " + numberOfTries;
+        firstCard = null;
+        secondCard = null;
+        preventClick = null;
     }
 }
 
