@@ -2,14 +2,43 @@ let firstCard = null;
 let secondCard = null;
 let preventClick = null;
 let numberOfTries = 0;
+const ON = "ON";
+const OFF = "OFF";
+const TOGGLE = "TOGGLE";
 
-// document.addEventListener("keydown", function (event) {
-//     console.log("keydown pressed");
-//     console.log(event.code);
-//     if (event.code === "KeyT") {
-//         toggleColor();
-//     }
-// });
+function enableCheatMode(enable) {
+    if (!enable) {
+        console.log("cheat mode disabled");
+        showColorCheat(OFF);
+        document.removeEventListener("keydown", keyPressEventHandler);
+        return;
+    }
+    console.log("cheat mode enabled");
+    document.addEventListener("keydown", keyPressEventHandler);
+}
+
+function keyPressEventHandler(event) {
+    // console.log(event.code);
+    if (event.code === "Backquote") {
+        showColorCheat(TOGGLE);
+    }
+}
+
+function showColorCheat(mode) {
+    if (!mode) mode = TOGGLE;
+    let cards = document.querySelectorAll(".card");
+    for (let card of cards) {
+        if (mode === ON) card.innerHTML = card.dataset.color;
+        if (mode === OFF) card.innerHTML = "";
+        if (mode === TOGGLE) {
+            if (card.innerHTML === "") {
+                card.innerHTML = card.dataset.color;
+            } else {
+                card.innerHTML = "";
+            }
+        }
+    }
+}
 
 function getRandomNumber(max) {
     return Math.floor(Math.random() * max);
@@ -46,17 +75,6 @@ function resetGame() {
         numberOfTries = 0;
         document.getElementById("status").innerHTML =
             "Click two squares to play. Tries: " + numberOfTries;
-    }
-}
-
-function toggleColor() {
-    let cards = document.querySelectorAll(".card");
-    for (let card of cards) {
-        if (card.innerHTML === "") {
-            card.innerHTML = card.dataset.color;
-        } else {
-            card.innerHTML = "";
-        }
     }
 }
 
@@ -102,3 +120,5 @@ function onCardClicked() {
 }
 
 resetGame();
+
+enableCheatMode(null);
