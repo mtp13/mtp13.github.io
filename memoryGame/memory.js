@@ -10,14 +10,14 @@ function enableCheatMode(enable) {
     if (!enable) {
         console.log("cheat mode disabled");
         showColorCheat(OFF);
-        document.removeEventListener("keydown", keyPressEventHandler);
+        document.removeEventListener("keydown", keyDownEventHandler);
         return;
     }
     console.log("cheat mode enabled");
-    document.addEventListener("keydown", keyPressEventHandler);
+    document.addEventListener("keydown", keyDownEventHandler);
 }
 
-function keyPressEventHandler(event) {
+function keyDownEventHandler(event) {
     // console.log(event.code);
     if (event.code === "Backquote") {
         showColorCheat(TOGGLE);
@@ -62,34 +62,30 @@ function resetGame() {
     for (let card of cards) {
         color = cardColors.splice(getRandomNumber(cardColors.length), 1);
         card.dataset.color = color;
-        console.log(color);
         card.dataset.matched = "false";
         card.style.backgroundColor = "white";
         card.addEventListener("click", onCardClicked);
-        document
-            .querySelector("#new-game")
-            .addEventListener("click", resetGame);
-        firstCard = null;
-        secondCard = null;
-        preventClick = null;
         numberOfTries = 0;
-        document.getElementById("status").innerHTML =
-            "Click two squares to play. Tries: " + numberOfTries;
+        resetShownCards();
     }
 }
 
-function resetNewTry() {
+function nextTurn() {
     numberOfTries += 1;
     if (document.querySelectorAll("[data-matched='false']").length > 0) {
-        firstCard = null;
-        secondCard = null;
-        preventClick = null;
-        document.getElementById("status").innerHTML =
-            "Click two squares to play. Tries: " + numberOfTries;
+        resetShownCards();
     } else {
         document.getElementById("status").innerHTML =
             "Good game! Tries: " + numberOfTries;
     }
+}
+
+function resetShownCards() {
+    firstCard = null;
+    secondCard = null;
+    document.getElementById("status").innerHTML =
+        "Click two squares to play. Tries: " + numberOfTries;
+    preventClick = null;
 }
 
 function onCardClicked() {
@@ -107,13 +103,13 @@ function onCardClicked() {
         if (secondCard.dataset.color === firstCard.dataset.color) {
             firstCard.dataset.matched = secondCard.dataset.matched = "true";
             document.getElementById("status").innerHTML = "Match Found";
-            setTimeout(resetNewTry, 500);
+            setTimeout(nextTurn, 500);
         } else {
             document.getElementById("status").innerHTML = "Match Not Found";
             setTimeout(function () {
                 firstCard.style.backgroundColor = "white";
                 secondCard.style.backgroundColor = "white";
-                resetNewTry();
+                nextTurn();
             }, 500);
         }
     }
@@ -121,4 +117,4 @@ function onCardClicked() {
 
 resetGame();
 
-enableCheatMode(null);
+enableCheatMode(false);
