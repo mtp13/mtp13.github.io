@@ -31,12 +31,19 @@ body {
 .card {
     display: inline-block;
     background-color: white;
-    width: 98px;
-    height: 98px;
+    height: 120px;
+    width: 90px;
     border: 2px solid black;
     border-radius: 5px;
     box-shadow: 3px 3px;
-    margin: 5px;
+    margin: 10px;
+    overflow: auto;
+}
+
+.card img {
+    height: 100px;
+    width: 75px;
+    padding-top: 10px;
 }
 
 .card:hover {

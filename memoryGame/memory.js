@@ -6,6 +6,17 @@ const ON = "ON";
 const OFF = "OFF";
 const TOGGLE = "TOGGLE";
 
+let pictures = {
+    elsyse: "elyse.jpeg",
+    cole: "cole.jpeg",
+    walker: "walker.jpeg",
+    roman: "roman.jpeg",
+    millie: "millie.jpeg",
+    virginia: "virginia.jpeg",
+    pops: "pops.jpeg",
+    gigi: "gigi.jpeg",
+};
+
 function enableCheatMode(enable) {
     if (!enable) {
         console.log("cheat mode disabled");
@@ -46,24 +57,25 @@ function getRandomNumber(max) {
 
 function resetGame() {
     const uniqueColors = [
-        "red",
-        "blue",
-        "green",
-        "yellow",
-        "darkorange",
-        "purple",
-        "saddlebrown",
-        "black",
+        "pops",
+        "gigi",
+        "cole",
+        "walker",
+        "roman",
+        "millie",
+        "virginia",
+        "elyse",
     ];
-    let color = "";
     let cardColors = [...uniqueColors, ...uniqueColors];
     let cards = document.querySelectorAll(".card");
 
     for (let card of cards) {
-        color = cardColors.splice(getRandomNumber(cardColors.length), 1);
+        let color = cardColors.splice(getRandomNumber(cardColors.length), 1);
         card.dataset.color = color;
+        console.log(color);
         card.dataset.matched = "false";
         card.style.backgroundColor = "white";
+        card.innerHTML = "";
         card.addEventListener("click", onCardClicked);
         numberOfTries = 0;
         resetShownCards();
@@ -95,11 +107,13 @@ function onCardClicked() {
     preventClick = true;
     if (!firstCard) {
         firstCard = this;
-        firstCard.style.backgroundColor = firstCard.dataset.color;
+        firstCard.innerHTML =
+            "<img src=" + firstCard.dataset.color + ".jpeg" + ">";
         preventClick = null;
     } else {
         secondCard = this;
-        secondCard.style.backgroundColor = secondCard.dataset.color;
+        secondCard.innerHTML =
+            "<img src=" + secondCard.dataset.color + ".jpeg" + ">";
         if (secondCard.dataset.color === firstCard.dataset.color) {
             firstCard.dataset.matched = secondCard.dataset.matched = "true";
             document.getElementById("status").innerHTML = "Match Found";
@@ -107,8 +121,8 @@ function onCardClicked() {
         } else {
             document.getElementById("status").innerHTML = "Match Not Found";
             setTimeout(function () {
-                firstCard.style.backgroundColor = "white";
-                secondCard.style.backgroundColor = "white";
+                firstCard.innerHTML = "";
+                secondCard.innerHTML = "";
                 nextTurn();
             }, 500);
         }
