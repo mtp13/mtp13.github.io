@@ -7,14 +7,14 @@ const OFF = "OFF";
 const TOGGLE = "TOGGLE";
 
 let pictures = {
-    elsyse: "elyse.jpeg",
-    cole: "cole.jpeg",
-    walker: "walker.jpeg",
-    roman: "roman.jpeg",
-    millie: "millie.jpeg",
-    virginia: "virginia.jpeg",
-    pops: "pops.jpeg",
-    gigi: "gigi.jpeg",
+    elsyse: "elyse.png",
+    cole: "cole.png",
+    walker: "walker.png",
+    roman: "roman.png",
+    millie: "millie.png",
+    virginia: "virginia.png",
+    pops: "pops.png",
+    gigi: "gigi.png",
 };
 
 function enableCheatMode(enable) {
@@ -108,12 +108,12 @@ function onCardClicked() {
     if (!firstCard) {
         firstCard = this;
         firstCard.innerHTML =
-            "<img src=" + firstCard.dataset.color + ".jpeg" + ">";
+            "<img src=" + firstCard.dataset.color + ".png" + ">";
         preventClick = null;
     } else {
         secondCard = this;
         secondCard.innerHTML =
-            "<img src=" + secondCard.dataset.color + ".jpeg" + ">";
+            "<img src=" + secondCard.dataset.color + ".png" + ">";
         if (secondCard.dataset.color === firstCard.dataset.color) {
             firstCard.dataset.matched = secondCard.dataset.matched = "true";
             document.getElementById("status").innerHTML = "Match Found";
