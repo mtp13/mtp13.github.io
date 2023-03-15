@@ -43,7 +43,8 @@ body {
 .card img {
     height: 100px;
     width: 75px;
-    padding-top: 10px;
+    margin-top: 10px;
+    border: 1px solid black;
 }
 
 .card:hover {

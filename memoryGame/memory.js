@@ -117,14 +117,14 @@ function onCardClicked() {
         if (secondCard.dataset.color === firstCard.dataset.color) {
             firstCard.dataset.matched = secondCard.dataset.matched = "true";
             document.getElementById("status").innerHTML = "Match Found";
-            setTimeout(nextTurn, 750);
+            setTimeout(nextTurn, 1000);
         } else {
             document.getElementById("status").innerHTML = "Match Not Found";
             setTimeout(function () {
                 firstCard.innerHTML = "";
                 secondCard.innerHTML = "";
                 nextTurn();
-            }, 750);
+            }, 1000);
         }
     }
 }
