@@ -7,13 +7,15 @@
 }
 
 body {
-    /* background-color: lightblue; */
+    background-color: white;
     text-align: center;
     color: black;
     padding: 50px;
+    /* 
     background-image: url("family.png");
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; 
+    */
 }
 
 #new-game {
