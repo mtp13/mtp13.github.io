@@ -108,12 +108,12 @@ function onCardClicked() {
     if (!firstCard) {
         firstCard = this;
         firstCard.innerHTML =
-            "<img src=" + firstCard.dataset.color + ".png" + ">";
+            "<img src=Assets/" + firstCard.dataset.color + ".png" + ">";
         preventClick = null;
     } else {
         secondCard = this;
         secondCard.innerHTML =
-            "<img src=" + secondCard.dataset.color + ".png" + ">";
+            "<img src=Assets/" + secondCard.dataset.color + ".png" + ">";
         if (secondCard.dataset.color === firstCard.dataset.color) {
             firstCard.dataset.matched = secondCard.dataset.matched = "true";
             document.getElementById("status").innerHTML = "Match Found";
